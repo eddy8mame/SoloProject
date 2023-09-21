@@ -1,0 +1,27 @@
+{
+  "name": "soloproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddy8mame/SoloProject.git"
+  },
+  "author": "Edwin Morlu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddy8mame/SoloProject/issues"
+  },
+  "homepage": "https://github.com/eddy8mame/SoloProject#readme",
+  "dependencies": {
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
