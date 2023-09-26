@@ -1,0 +1,117 @@
+[
+  {
+    "id": 0,
+    "domain": "https://www.ssense.com",
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "productID": 14083661,
+    "name": "Taupe Crinkled Bomber Jacket",
+    "sku": "232072M175000",
+    "brand": {
+      "@type": "Brand",
+      "name": "Filippa K"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": 630,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "/en-us/men/product/filippa-k/taupe-crinkled-bomber-jacket/14083661"
+    },
+    "url": "/en-us/men/product/filippa-k/taupe-crinkled-bomber-jacket/14083661",
+    "description": "Padded crinkled nylon taffeta bomber jacket.\r\n\r\n· Rib knit stand collar, hem, and cuffs\r\n· Zip closure\r\n· Flap pockets\r\n· Utility pocket at sleeve\r\n· Welt pocket at interior\r\n· Full satin lining\r\n\r\nSupplier color: Nougat",
+    "image": "https://img.ssensemedia.com/images/232072M175000_1/filippa-k-taupe-crinkled-bomber-jacket.jpg"
+  },
+  {
+    "id": 1,
+    "domain": "https://www.ssense.com",
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "productID": 14083251,
+    "name": "Black Wide-Leg Trousers",
+    "sku": "232072M191002",
+    "brand": {
+      "@type": "Brand",
+      "name": "Filippa K"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": 370,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "/en-us/men/product/filippa-k/black-wide-leg-trousers/14083251"
+    },
+    "url": "/en-us/men/product/filippa-k/black-wide-leg-trousers/14083251",
+    "description": "Wool-blend canvas trousers.\r\n\r\n· Belt loops\r\n· Four-pocket styling\r\n· Zip-fly\r\n· Pleats at waist\r\n· Creased legs\r\n\r\nSupplier color: Black",
+    "image": "https://img.ssensemedia.com/images/232072M191002_1/filippa-k-black-wide-leg-trousers.jpg"
+  },
+  {
+    "id": 2, 
+    "domain": "https://www.ssense.com",
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "productID": 14145401,
+    "name": "Blue Thalassa Coat",
+    "sku": "232153M176000",
+    "brand": {
+      "@type": "Brand",
+      "name": "CMMAWEAR"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": 2170,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "/en-us/men/product/cmmawear/blue-thalassa-coat/14145401"
+    },
+    "url": "/en-us/men/product/cmmawear/blue-thalassa-coat/14145401",
+    "description": "Shag knit llama- and wool-blend coat.\r\n\r\n· Spread collar\r\n· Button closure\r\n· Welt pockets\r\n· Pleat at cuffs\r\n· Central vent at back hem\r\n· Welt pocket at interior\r\n· Full quilted satin lining\r\n\r\nSupplier color: Blue",
+    "image": "https://img.ssensemedia.com/images/232153M176000_1/cmmawear-blue-thalassa-coat.jpg"
+  },
+  {
+    "id": 3, 
+    "domain": "https://www.ssense.com",
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "productID": 13447901,
+    "name": "Black Sealed Reversible Shearling Jacket",
+    "sku": "232232M179005",
+    "brand": {
+      "@type": "Brand",
+      "name": "Rick Owens"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": 5175,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "/en-us/men/product/rick-owens/black-sealed-reversible-shearling-jacket/13447901"
+    },
+    "url": "/en-us/men/product/rick-owens/black-sealed-reversible-shearling-jacket/13447901",
+    "description": "Reversible crinkled lambskin jacket. Raw edges and buffed calfskin trim throughout.\r\n\r\nReverse in black shearling. \r\n\r\n· Paneled construction\r\n· Zip closure extends to hood\r\n· Zip pockets\r\n· Logo patch at back\r\n· Patch pockets at interior\r\n· Logo-engraved silver-tone hardware\r\n\r\nSupplier color: Black",
+    "image": "https://img.ssensemedia.com/images/232232M179005_1/rick-owens-black-sealed-reversible-shearling-jacket.jpg"
+  },
+  {
+    "id": 4, 
+    "domain": "https://www.ssense.com",
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "productID": 14026831,
+    "name": "Navy Flocked Sweater",
+    "sku": "232168M206019",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maison Margiela"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": 1390,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "/en-us/men/product/maison-margiela/navy-flocked-sweater/14026831"
+    },
+    "url": "/en-us/men/product/maison-margiela/navy-flocked-sweater/14026831",
+    "description": "Knit wool sweater. Graphic pattern flocked throughout. \r\n\r\n· Rib knit V-neck, hem, and cuffs \r\n· Dropped shoulders\r\n· White stitching at back collar \r\n\r\nSupplier color: Navy",
+    "image": "https://img.ssensemedia.com/images/232168M206019_1/maison-margiela-navy-flocked-sweater.jpg"
+  }
+]

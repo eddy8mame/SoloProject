@@ -3,10 +3,10 @@ const path = require('path');
 
 module.exports = {
   entry: './client/index.js',
-  mode: 'production',
   output: {
     filename: 'bundle.js', 
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   }, 
   module: {
     rules: [
@@ -16,14 +16,18 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', ['@babel/preset-react', {"runtime": "automatic"}]]
           }
         }
       },
       {
         test: /\.s?css$/i,
-        use: ['style-loader', 'css-loader']
-      }
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   devServer: {
@@ -33,7 +37,12 @@ module.exports = {
     }, 
     proxy: {
       '/':'http://localhost:3000'
-    }, 
-    plugins: [new HtmlWebpackPlugin({template: 'index.html'})]
-  }
+    },
+    historyApiFallback: true,
+     port: 8080
+  },
+  plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+  devtool: 'source-map',
+  
+  
 };
