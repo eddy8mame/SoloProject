@@ -1,27 +1,18 @@
-import React, { useState } from 'react'; 
+import React from 'react'; 
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-import ItemList from './itemList/index';
-// import ItemModal from './itemModal';
-import { useGetAllItemsQuery } from './itemApi.js';
+import ItemRow from './itemRow/index';
+import { useGetAllItemsQuery } from './api.js';
 
 export const Items = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const { data, error, isLoading, isSuccess, isError } = useGetAllItemsQuery();
-  // const isSelected = useSelector((state) => state.item.itemIsSelected)
-  // console.log(isSelected);
- /*
-  if error, return error message
-  else if loading, return loading message
-  else if data, load data
- */
-  
 
+  const { data, loadInProgress } = useSelector((state) => state.items);
+  const { queryData, isLoading, isSuccess, isError } = useGetAllItemsQuery();
+  
   return (
     <>
-      {error ? (<>Oh no, there was an error</>)
+      {isError ? (<>Oh no, there was an error</>)
         : isLoading ? (<>Loading...</>)
-          : data ? (<ItemList items={data}/>)
+          : data ? (<ItemRow items={data}/>)
             :null
       }
     </>

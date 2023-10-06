@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { useGetUserMutation } from '../components/item/itemApi';
+import { useGetLoginUserMutation } from '../components/item/api';
+import { useDispatch, useSelector } from 'react-redux';
+import { Form, useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import { logout } from '../components/user/userSlice';
 
 const Login = () => {
-  const [isUsername, setIsUsername] = useState('');
-  const [isPassword, setIsPassword] = useState('');
+  const { loading, error } = useSelector((state) => state.user)
 
-  const [getUser, response, status ] = useGetUserMutation();
+  const [loginUser, { data: res }] = useGetLoginUserMutation();
+  const { register, handleSubmit } = useForm();
 
-  const navigate = useNavigate();
-  const handleSubmit = () => {
-    console.log('have been clicked')
-    getUser({});
-    
+  const submitForm = (data) => {
+    loginUser(data)
   }
+
   return (
     <OuterWrap>
       <InnerWrap>
@@ -26,7 +27,7 @@ const Login = () => {
         Password
       <input onChange={(e)=> setIsPassword(e.target.value)}/>
       </label>
-      <button onClick={handleSubmit}>Sign In</button>
+      <button onClick={submitForm}>Sign In</button>
       </InnerWrap>
     </OuterWrap>
   )

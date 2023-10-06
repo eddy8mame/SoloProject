@@ -1,25 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const userToken = localStorage.getItem('userToken')
+  ? localStorage.getItem('userToken')
+  : {}
+
+
 const initialState = {
-  user: null,
-  status: "idle",
-  error: null
+  loading: false,
+  userInfo: null,
+  userToken,
+  error: null, 
+  success: false, 
 }
 
-const userSlice = createSlice({
-  name: 'user',
+export const userSlice = createSlice({
+  name: 'user', 
   initialState,
-  reducer: {
-    logOutUser: (state, action) => {
-      
+  reducers: {
+    logout: (state, {payload}) => {
+      console.log('logout')
+    }, 
+    setCredentials: (state, {payload}) => {
+      console.log(payload)
+      state.userInfo = payload;
     }
-  }, 
-  extraReducers: (builder) => {
-    builder.addMatcher()
-  },
-});
+  }
+})
 
-// export {} userSlice.actions; 
+export const { logout, setCredentials } = userSlice.actions;
 export default userSlice.reducer;
-
-// create the userAPI endpoints for getting teh user

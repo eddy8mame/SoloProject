@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'; 
 
-function useScroll() {
+const useScroll = () => {
   const [scrolling, setScrolling] = useState(false); 
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleHeaderScroll = () => {
       if (window.scrollY > 0) {
         setScrolling(true);
       } else {
@@ -12,10 +12,10 @@ function useScroll() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleHeaderScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleHeaderScroll);
     }
   },[]);
 

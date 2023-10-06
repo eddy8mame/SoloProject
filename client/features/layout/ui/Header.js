@@ -12,7 +12,6 @@ const Header = ({ children }) => {
   )
 }
 
-
 const HeaderContainer = styled.header`
 position: fixed;
 top: 0; 

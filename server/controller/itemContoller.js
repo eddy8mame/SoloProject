@@ -11,4 +11,16 @@ itemController.getAllItems = (req, res, next) => {
   next(); 
 }
 
+itemController.addItem = (req, res, next) => {
+
+}; 
+
+itemController.deleteItem = (req, res, next) => {
+
+}; 
+
+itemController.updateItem = (req, res, next) => {
+  
+};
+
 module.exports = itemController; 

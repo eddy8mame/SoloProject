@@ -2,15 +2,19 @@ const express = require('express');
 const Router = express.Router();
 const userController = require('../controller/userController');
 
-// receive user information, 
-// if user is in DB login user
-// if user is not in DB redirect to signup
 Router
   .route('/login')
-  .post((req, res) => {
-    // confirm successful login, retrieve send user data
-    res.status(200).send();
-})
+  .post(userController.verifyUser, (req, res) => {
+    console.log('verifyUser');
+    res.status(200).json('SUCCESS!');
+  })
+
+Router
+  .route('/register')
+  .post(userController.createUser, (req, res) => {
+    console.log('createUser');
+    res.status(200).json(res.locals.user);
+  });
 
 
 module.exports = Router; 

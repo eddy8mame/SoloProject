@@ -5,19 +5,31 @@ import ItemPrice from './ItemPrice';
 import ItemDesc from './ItemDesc';
 import ItemSelect from './ItemSelect';
 import ItemOptions from './ItemOptions';
+import useMouseOver from '../../../features/layout/ui/RightColumn/modal/Hooks/useMouseOver';
+import { useState } from 'react';
 
 const ItemCard = ({ item, id }) => {
-  const { image, name:title, description:desc } = item; 
+  const { image, name: title, description: desc, offers } = item;
+
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsMouseOver(true);
+  }
+
+  const handleMouseLeave = () => {
+    setIsMouseOver(false);
+  }
   
   return (
-    <Wrapper>
+    <Wrapper onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Card>
-      <ItemOptions/>
-      <ItemSelect id={id} />
-      <ItemImage image={image} alt={desc} />
-      <ItemTitle title={title} />
-      {/* <ItemPrice price={price} /> */}
-      <ItemDesc desc={desc} />
+        <ItemOptions id={id} isMouseOver={isMouseOver} />
+        <ItemSelect id={id} isMouseOver={isMouseOver} />
+        <ItemImage image={image} alt={desc} />
+        <ItemTitle title={title} />
+        <ItemPrice price={`${offers.price}`} />
+        {/* <ItemDesc desc={desc} /> */}
     </Card>
     </Wrapper>
   )
@@ -26,6 +38,7 @@ const ItemCard = ({ item, id }) => {
 export default ItemCard; 
 
 const Card = styled.div`
+font-family: 'FlindersFont', sans-serif;
 position: relative; 
 background: white;
 height: 300px;
@@ -35,19 +48,8 @@ align-items: center;
 justify-content: center; 
 gap: 10px;
 border-radius: 4px;
+margin-bottom: 30px;
 `;
-
-const gradient = keyframes`
-0% {
-  background-position: 0% 50%;
-}
-50% {
-  background-position: 100% 50%;
-}
-100% {
-  background-position: 0% 50%;
-}
-`
 
 const Wrapper = styled.div`
 position: relative; 
@@ -55,5 +57,6 @@ height: 300px;
 padding: 1px; 
 border-radius:4px; 
 background: linear-gradient(-45deg, #FFFFFF, #D5D5D5); 
-animation: ${gradient} 4s ease infinite; 
+margin-bottom: 30px;
 `;
+

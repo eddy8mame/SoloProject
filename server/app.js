@@ -19,12 +19,28 @@ const userRouter = require('./routes/userRoute');
 const app = express(); 
 
 //Middleware
+app.use(cors({
+  origin: 'http://localhost:8080',
+  methods: 'POST',
+  allowedHeaders: 'Content-Type', 
+  // Credential: true
+}));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use(cors());
 app.use(morgan('tiny')); 
 
 // Serve Static Files
-app.use('/build',express.static(path.resolve(__dirname, '../build')));
+app.use('/build', express.static(path.resolve(__dirname, '../build')));
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  return next();
+});
 
 // Serve Root
 app.get('/', (req, res) => {
@@ -35,14 +51,19 @@ app.use('/items', itemRouter);
 
 app.use('/accounts', userRouter);
 
+app.use('/dashboard', itemRouter); 
+
 // Catch-All Route Handler
 app.use((req, res) => {
-  console.log('PING');
+  console.log('BAD ROUTE');
   return res.status(400).send('Bad Route')
 });
 
+// Global Error Handler
+// error should include a status, information about error, and a frontend message
 app.use((err, req, res) => {
-  console.log(err); 
+  console.log(err);
+  res.status(400).json({error : err});
 })
 
 module.exports = app; 
